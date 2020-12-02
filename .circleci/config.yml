@@ -26,8 +26,8 @@ jobs:
       - run:
           name: "ALL IN REMOTE"
           command: |
-            git config --global user.email $gitmail
-            git config --global user.name $gitname
+            git config --global user.email $GitHubMail
+            git config --global user.name $GitHubName
             curl -sL https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/Tess/remote_build.sh -o build.sh
             source build.sh
 workflows:
