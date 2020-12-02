@@ -4,6 +4,9 @@ jobs:
     docker:
       # Use this New Image for Starting things up
       - image: fr3akyphantom/droid-runner:latest # DO Not Change
+        auth:
+          username: dockuser
+          password: $dockpass
     environment:
       MANIFEST_BRANCH: 'android-10.0'
       VERSION: '3.0.0-test'
@@ -33,4 +36,4 @@ workflows:
           filters:
             branches:
               only: 'android-10.0'
-          context: org-global
+          context: dockauth
