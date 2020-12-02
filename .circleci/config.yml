@@ -24,10 +24,12 @@ jobs:
       - setup_remote_docker:
           version: 19.03.8
       - run:
+      command: git config --global user.email $gitmail
+      -run:
+      command: git config --global user.name $gitname
+      - run:
           name: "ALL IN REMOTE"
           command: |
-           - git config --global user.email $gitmail
-           - git config --global user.name $gitname
             curl -sL https://raw.githubusercontent.com/PitchBlackRecoveryProject/vendor_utils/Tess/remote_build.sh -o build.sh
             source build.sh
 workflows:
